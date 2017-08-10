@@ -7,6 +7,7 @@ public class ThirdPersonCamera : MonoBehaviour
 
     public Transform lookAt;
     public Transform camTransform;
+    public CharacterController myController;
 
     private Camera cam;
 
@@ -40,6 +41,7 @@ public class ThirdPersonCamera : MonoBehaviour
         currentY -= Input.GetAxis("Mouse Y");
 
         currentY = Mathf.Clamp(currentY, Y_ANGLE_MIN, Y_ANGLE_MAX);
+        //myController.transform.LookAt(camTransform);
     }
 
     private void LateUpdate()

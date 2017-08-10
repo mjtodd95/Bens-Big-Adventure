@@ -5,9 +5,9 @@ using UnityEngine;
 public class BenCharacter : MonoBehaviour
 {
 
-    //Capsule character
     public CharacterController myController;
     public Transform cameraTransform;
+
     public float speed = 3f;
     public float gravityStrength = 9.8f;
     public float jumpSpeed = 4f;
@@ -16,7 +16,7 @@ public class BenCharacter : MonoBehaviour
     Vector3 velocity;
     Vector3 groundedVelocity;
     Vector3 normal;
-
+    
     // Update is called once per frame
     void Update()
     {
@@ -54,6 +54,9 @@ public class BenCharacter : MonoBehaviour
         CollisionFlags flags = myController.Move(myVector);
         velocity = myVector / Time.deltaTime;
 
+        //Set Model to move with camera rotation
+        myController.transform.LookAt(cameraTransform);
+        transform.rotation *= Quaternion.Euler(0, 180f, 0);
 
         //Enables character to jump
         if (Input.GetButtonDown("Jump"))
