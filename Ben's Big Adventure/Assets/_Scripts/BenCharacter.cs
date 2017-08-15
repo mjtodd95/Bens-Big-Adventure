@@ -58,6 +58,7 @@ public class BenCharacter : MonoBehaviour
         myController.transform.LookAt(cameraTransform);
         transform.rotation *= Quaternion.Euler(0, 180f, 0);
 
+
         //Enables character to jump
         if (Input.GetButtonDown("Jump"))
         {

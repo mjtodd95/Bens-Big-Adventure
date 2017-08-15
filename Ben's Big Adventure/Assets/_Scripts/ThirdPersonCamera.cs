@@ -12,8 +12,8 @@ public class ThirdPersonCamera : MonoBehaviour
     private Camera cam;
 
     private float distance = 5.0f;
-    private float currentX = 0.0f;
-    private float currentY = 0.0f;
+    public float currentX = 0.0f;
+    public float currentY = 0.0f;
     private float sensitivityX = 8.0f;
     private float sensitivityY = 1.0f;
 
